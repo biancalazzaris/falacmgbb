@@ -17,12 +17,12 @@ io.on('connection', (socket) => {
 
   socket.on('msgParaServidor', (data) => {
     socket.emit('msgParaCliente', {
-      apelido: data.apelido,
+      name: data.name,
       mensagem: data.mensagem,
     }); 
 
     socket.broadcast.emit('msgParaCliente', {
-      apelido: data.apelido,
+      name: data.name,
       mensagem: data.mensagem,
     });
   });
